@@ -1,0 +1,216 @@
+Q1: Print Digits (Right to Left)
+
+import java.util.Scanner;
+public class PrintDigits {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();
+            while (n > 0) {
+                int digit = n % 10;  
+                System.out.print(digit + " ");
+                n = n / 10;       
+            }
+        }
+    }
+}
+***************************************************
+Q2: Print Digits (Left to Right)
+
+import java.util.Scanner;
+public class PrintDigitsLeftToRight {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            String n = sc.next(); 
+            for (int i = 0; i < n.length(); i++) {
+                System.out.print(n.charAt(i) + " ");
+            }
+        }
+    }
+}
+***************************************************
+Q3: Count Digits
+
+import java.util.Scanner;
+public class CountDigits {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            long n = sc.nextLong();  
+            int count = 0;
+            while (n > 0) {
+                count++;
+                n = n / 10;  
+            }
+            System.out.println(count);
+        }
+    }
+}
+**************************************************
+Q4: Sum of Digits
+
+import java.util.Scanner;
+public class SumOfDigits {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();   
+            int sum = 0;
+            while (n > 0) {
+                int digit = n % 10;   
+                sum += digit;         
+                n = n / 10;           
+            }
+            System.out.println(sum);
+        }
+    }
+}
+**************************************************
+Q5: Armstrong Number
+
+import java.util.Scanner;
+public class ArmstrongNumber {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();   
+            int original = n;
+            int len = String.valueOf(n).length();
+            int sum = 0;
+            while (n > 0) {
+                int digit = n % 10;
+                sum += Math.pow(digit, len);  
+                n = n / 10;
+            }
+            if (sum == original) {
+                System.out.println("Armstrong Number");
+            } else {
+                System.out.println("Not an Armstrong Number");
+            }
+        }
+    }
+}
+******************************************************
+Q6: Collatz Sequence
+
+import java.util.Scanner;
+public class CollatzSequence {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();   
+            while (n != 1) {
+                System.out.print(n + ", ");
+                if (n % 2 == 0) {
+                    n = n / 2;
+                } else {
+                    n = 3 * n + 1;
+                }
+            }
+        }
+        System.out.print(1);  
+    }
+}
+***************************************************
+Q7: Harshad / Niven Number
+
+import java.util.Scanner;
+public class HarshadNumber {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();   
+            int original = n;
+            int sum = 0;
+            while (n > 0) {
+                sum += n % 10;
+                n = n / 10;
+            }
+            if (original % sum == 0) {
+                System.out.println("Harshad Number");
+            } else {
+                System.out.println("Not Harshad Number");
+            }
+        }
+    }
+}
+****************************************************
+Q8: Spy Number
+
+import java.util.Scanner;
+public class SpyNumber {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();   
+            int sum = 0, product = 1, temp = n;
+            while (temp > 0) {
+                int digit = temp % 10;
+                sum += digit;
+                product *= digit;
+                temp = temp / 10;
+            }
+            if (sum == product) {
+                System.out.println("Spy Number");
+            } else {
+                System.out.println("Not Spy Number");
+            }
+        }
+    }
+}
+******************************************************
+Q9: Neon Number
+
+import java.util.Scanner;
+public class NeonNumber {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();  
+            int square = n * n;
+            int sum = 0;
+            while (square > 0) {
+                sum += square % 10;
+                square /= 10;
+            }
+            if (sum == n) {
+                System.out.println("Neon Number");
+            } else {
+                System.out.println("Not Neon Number");
+            }
+        }
+    }
+}
+******************************************************
+Q10: Reverse a Number
+
+import java.util.Scanner;
+public class ReverseNumber {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();   
+            int rev = 0;
+            while (n > 0) {
+                int digit = n % 10;     
+                rev = rev * 10 + digit; 
+                n = n / 10;             
+            }
+            System.out.println(rev);
+        }
+    }
+}
+**************************************************
+Q11: Palindrome Number
+
+import java.util.Scanner;
+public class PalindromeNumber {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();      
+            int original = n;
+            int rev = 0;
+            while (n > 0) {
+                int digit = n % 10;
+                rev = rev * 10 + digit;
+                n = n / 10;
+            }
+            if (rev == original) {
+                System.out.println("Palindrome");
+            } else {
+                System.out.println("Not Palindrome");
+            }
+        }
+    }
+}
